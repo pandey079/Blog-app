@@ -5,7 +5,7 @@ const path = require('path')
 const app = express();
 const cookiesParser = require('cookie-parser');
 // Connect to Database:
-connectToDB(`${process.env.DATABASE_URL}/${process.env.DATABASE_NAME}`);
+connectToDB(`${process.env.DATABASE_URL}`);
 
 // import blog models to render on front page:
 const Blog = require('./modules/blogModule')
