@@ -8,11 +8,11 @@
     <%- include('./partials/nav') %>
     <div class="container mt-4">
         <h1><%= locals.blog.title %></h1>
-        <img src="<%= blog.coverImage %>" width="300px"></img>
+        <img src="<%= blog.coverImageURL %>" width="300px"></img>
         <pre><%= blog.body %></pre>
     </div>
     <div class="container mt-4">
-        <img src="<%= blog.createBy.profileImageURL %>" width="50px" > <%= blog.createBy.fullname %> </img>
+        <img src="<%= blog.createdBy.profileImageURL %>" width="50px" > <%= blog.createdBy.fullname %> </img>
     </div>
     <!-- form for Comment handling -->
     <% if (locals.user) { %>

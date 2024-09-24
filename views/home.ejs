@@ -6,13 +6,13 @@
 </head>
 <body>
     <%- include('./partials/nav') %>
-    <div>Welcome to our New Blog</div>
+    <div style="text-align: center;">Welcome to our New Blog</div>
     <div class="container mt-2 row row-cols-3">
 
       <% blogs.forEach(blog => { %>
         <div class="col">
           <div class="card" style="width: 18rem;">
-            <img src="./<%= blog.coverImage %>" class="card-img-top" alt="coverImage">
+            <img src="./<%= blog.coverImageURL %>" class="card-img-top" alt="coverImage">
             <div class="card-body">
               <h5 class="card-title"><%= blog.title %></h5>
               <a href="/blog/<%= blog._id %>" class="btn btn-primary">Views</a>

@@ -33,11 +33,11 @@ router
     console.log(req.body);
     console.log(req.file);
     // insert in database 
-    const blog = await Blog.create({
+    const blog = await Blog.create({ 
         title,
         body,
-        createBy: req.user._id,
-        coverImage: `../upload/${req.file.filename}` // create a new folder and add this.
+        createdBy: req.user._id,
+        coverImageURL: `../upload/${req.file.filename}` // create a new folder and add this.
     })
     // render its frontend
     // handle coverImage upload through multer:
@@ -45,7 +45,7 @@ router
 })
 .get('/:id', async (req, res) => {
     const userId = req.params.id;
-    const blog = await Blog.findById(userId).populate('createBy');
+    const blog = await Blog.findById(userId).populate('createdBy');
     const comments = await commentModel.find({blogId: userId}).populate('createdBy');
     console.log(blog._id),
     console.log(comments),
